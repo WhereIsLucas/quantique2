@@ -1,0 +1,20 @@
+\chapter{Outils mathématiques}
+\section{Le produit tensoriel de 2 espaces vectoriels}
+
+Soient $\varepsilon_1$, $\varepsilon_2$ espaces vectoriels de dimensions $N_1$ et $N_2$.
+
+\begin{thm}
+Il existe toujours un espace vectoriel $\varepsilon$ et 1 application bilinéaire \footnote{Linéaire tant sur le premier membre que sur le second}. $G: \varepsilon_1 \times \varepsilon_2 \rightarrow \varepsilon$ tels que, pour toute application bilinéaire $S: \varepsilon_1 \times \varepsilon_2 \rightarrow \varepsilon_S$, il existe une application linéaire $\tilde{S} : \varepsilon \rightarrow \varepsilon_S$ telle que 
+$$ S(\ket{u},\ket{v})  = \tilde{S}G(\ket{u},\ket{v}), \forall \ket{u} \in \varepsilon_1,\ket{v} \in \varepsilon_2$$
+\end{thm}
+Ce théorème est fondateur pour le produit tensoriel. On peut le lire autrement. Soient deux EV, il existe toujours un troisième EV avec une application G.
+\begin{thm}
+	L'espace vectoriel $\varepsilon$ est unique à un isomorphisme près, de même que l'application G. Cet espace est de dim $N_1 \cdot N_2$ et $ \{ G(\ket{u_i},\ket{v_j}) \} $ est une base de $ \varepsilon $
+\end{thm}
+
+\begin{definition}
+	L'espace $\varepsilon$ est appelé espace produit tensoriel des espaces vectoriels $\varepsilon_1$ et $\varepsilon_2$ et on le note
+	$$ \varepsilon = \varepsilon_1 \otimes \varepsilon_2$$
+\end{definition}
+
+On peut noter les vecteurs $G(\ket{u},\ket{v})$ $\ket{u}\otimes\ket{v}$ ou $\ket{u}\ket{v}$ ou $\ket{u,v}$
