@@ -59,7 +59,7 @@ Soient $\varepsilon_1$ et $\varepsilon_1$, deux espaces d'Hilbert de dimension $
 On peut définir le produit scalaire suivant\footnote{A vérifier par soi-même que c'est bien correct, et que c'est un produit scalaire} dans l'espace $\varepsilon$ 
 \begin{thm}
 	L'application
-	$$ \langle G \left(\ket{u},\ket{v}\right)|  G \left(\ket{u'},\ket{v'}\right) \rangle_\epsilon = \braket{u|u'}_{\varepsilon_1} \cdot \braket{v|v'}_{\varepsilon_2}$$
+	$$ \left\langle  G (\ket{u},\ket{v} )|  G \left(\ket{u'},\ket{v'}\right) \right\rangle_\epsilon = \braket{u|u'}_{\varepsilon_1} \cdot \braket{v|v'}_{\varepsilon_2}$$
 	définit un produit scalaire du $\varepsilon$ et confère à cet espace, avec la norme et la métrique associée, la structure d'un espace d'Hilbert.
 \end{thm}
 
@@ -81,24 +81,16 @@ On peut calculer le produit scalaire pour chacun des espaces proposés.
 	\item Tout vecteur $\ket{u}\otimes\ket{v}$ est appelé vecteur produit tensoriel
 	\item Tout vecteur produit tensoriel peut se décomposer sur une base de $\varepsilon$ : \\
 	Si $ \{\ket{u_i} \}$ base de $\varepsilon_1$ et $ \{\ket{v_j} \}$ base de $\varepsilon_2$ 
-	$$ \ket{u} \otimes\ket{v} = \left( \sum_i a_i \ket{u_i}\right) \otimes \left( \sum_j b_j \ket{v_j}\right) = \sum_{i,j} a_ib_j\ket{u_i}\otimes\ket{v_j}
-	\footnote{
-		$\ket{\psi_1} \otimes \ket{\psi_1} = \sum_i a_i \ket{u_i}\otimes\sum_j b_j \ket{v_j} = \sum_i a_i \left( \ket{u_i}\otimes\sum_j b_j \ket{v_j} \right) = \sum_i a_i \sum_j b_j \ket{u_i}\otimes\ket{v_j} = \sum_{i,j} a_ib_j\ket{u_i}\otimes\ket{v_j}$
+	$$ \ket{u} \otimes\ket{v} = \left( \sum_i a_i \ket{u_i}\right) \otimes \left( \sum_j b_j \ket{v_j}\right) = \sum_{i,j} a_ib_j\ket{u_i}\otimes\ket{v_j} \footnotemark $$
+	\footnotetext{
+		Soit $\ket{\psi}$ quelconque $\in \varepsilon$. On peut le décomposer dans la base de $\varepsilon$ $\left\lbrace \ket{u_i}\otimes\ket{v_j} \forall i,j \right\rbrace $. $\ket{\psi} = \sum_{i,j} c_{i,j} \ket{u_i}\otimes\ket{v_j}$
+		
+		La question est de savoir s'il existe $N_1$ coefficients $a_i$ et $N_2$ coefficients $b_j$ tels que $\forall i,j$ on a $c_{i,j} = a_ib_j$ .
+		\begin{itemize}
+			\item 	Si oui, alors, on pourra écrire  $\ket{\psi} = \sum_{i,j} c_{i,j} \ket{u_i}\otimes\ket{v_j} = \sum_{i,j} a_i b_j \ket{u_i}\otimes\ket{v_j} = \sum_{i} a_i  \ket{u_i} \otimes \sum_j b_j\ket{v_j}$. Et donc $\ket{\psi}$ appartient à l'ensemble des états séparés.
+			\item Si non, cela veut dire que $\ket{\psi}$ n'appartient pas à l'ensemble des états séparés. On peut montrer facilement que possible. En effet, il est rarement possible de trouver $N_1$ et $N_2$ nombres $a_i$ et $b_j$ tels que $N_1N_2$ nombres $c_{i,j}$ peuvent s'écrire $c_{i,j} = a_i b_j$. On a $N_1N_2$ équations à $N_1 + N_2$ inconnues, cela semble complexe à résoudre.
+		\end{itemize}
 	}
-	$$
-	\item Tout vecteur de $\varepsilon$ n’est pas nécessairement un vecteur produit tensoriel :
-	l’expression la plus générale d’un ket $\ket{\psi} \in \varepsilon$ est donnée par
-	$$
-	 \ket{\psi} = \sum_{i,j} c_{i,j}\ket{u_i}\otimes\ket{v_j} \neq \ket{\psi_1} \otimes \ket{\psi_2} \footnote{
-	 	Soit $\ket{\psi}$ quelconque $\in \varepsilon$. On peut le décomposer dans la base de $\varepsilon$ $\left\lbrace \ket{u_i}\otimes\ket{v_j} \forall i,j \right\rbrace $. $\ket{\psi} = \sum_{i,j} c_{i,j} \ket{u_i}\otimes\ket{v_j}$
-	 	
-	 	La question est de savoir s'il existe $N_1$ coefficients $a_i$ et $N_2$ coefficients $b_j$ tels que $\forall i,j$ on a $c_{i,j} = a_ib_j$ .
-	 	\begin{itemize}
-	 	\item 	Si oui, alors, on pourra écrire  $\ket{\psi} = \sum_{i,j} c_{i,j} \ket{u_i}\otimes\ket{v_j} = \sum_{i,j} a_i b_j \ket{u_i}\otimes\ket{v_j} = \sum_{i} a_i  \ket{u_i} \otimes \sum_j b_j\ket{v_j}$. Et donc $\ket{\psi}$ appartient à l'ensemble des états séparés.
-	 	\item Si non, cela veut dire que $\ket{\psi}$ n'appartient pas à l'ensemble des états séparés. On peut montrer facilement que possible. En effet, il est rarement possible de trouver $N_1$ et $N_2$ nombres $a_i$ et $b_j$ tels que $N_1N_2$ nombres $c_{i,j}$ peuvent s'écrire $c_{i,j} = a_i b_j$. On a $N_1N_2$ équations à $N_1 + N_2$ inconnues, cela semble complexe à résoudre.
-	 	\end{itemize}
- 	}
-	$$  
 	
 	L'espace produit tensoriel contient des vecteurs produits tensoriel des vecteurs des espaces $\varepsilon_1$ $\varepsilon_2$ mais il contient aussi d'autres vecteurs qui ne sont pas résultats de produits tensoriel. 
 	
@@ -130,8 +122,16 @@ Pour le produit tensoriel $\hat{A}\otimes\hat{B}$, la notation $\hat{A}\hat{B}$ 
 \section{Commutateur dans l'espace produit}
 
 Soient $\hat{A}$ et $\hat{B}$ opérateurs prolongés dans $\varepsilon$,
-$$ \left[\hat{A},\hat{B}\right] = 0 $$
-
-TODO:démonstration
+$$ \left[\hat{A},\hat{B}\right] = 0\footnotemark $$
+\footnotetext{
+	En effet
+	\begin{align*}
+	\left[\hat{A},\hat{B}\right](\ket{\psi_1}\otimes\ket{\psi_2}) & = (\hat{A}\hat{B}-\hat{B}\hat{A})(\ket{\psi_1}\otimes\ket{\psi_2})\\
+	&= \hat{A}\hat{B}(\ket{\psi_1}\otimes\ket{\psi_2}) - \hat{B}\hat{A}(\ket{\psi_1}\otimes\ket{\psi_2}) \\
+	&= \left[(\hat{A}\ket{\psi_1})\otimes(\hat{B}\ket{psi_2})\right] - \left[(\hat{A}\ket{\psi_1})\otimes(\hat{B}\ket{psi_2})\right] \\
+	&= 0
+	\end{align*}
+	Il en résulte $\left[\hat{A}-\hat{B}\right]\ket{\psi} = 0,\forall\ket{\psi} \in\varepsilon$ et donc $\left[\hat{A}-\hat{B}\right] = 0,$
+}
 
 On dit que 2 opérateurs originaires d'espaces différents commutent toujours.
