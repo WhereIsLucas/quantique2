@@ -1,6 +1,8 @@
 \chapter{Outils mathématiques}
 \section{Le produit tensoriel de 2 espaces vectoriels}
 
+Le produit scalaire est une application qui à deux vecteurs renvoie un nombre. Nous allons introduire le produit scalaire.
+
 Soient $\varepsilon_1$, $\varepsilon_2$ espaces vectoriels de dimensions $N_1$ et $N_2$.
 
 \begin{thm}
@@ -12,9 +14,124 @@ Ce théorème est fondateur pour le produit tensoriel. On peut le lire autrement
 	L'espace vectoriel $\varepsilon$ est unique à un isomorphisme près, de même que l'application G. Cet espace est de dim $N_1 \cdot N_2$ et $ \{ G(\ket{u_i},\ket{v_j}) \} $ est une base de $ \varepsilon $
 \end{thm}
 
+L'application G est l'application produit tensoriel.
+
 \begin{definition}
 	L'espace $\varepsilon$ est appelé espace produit tensoriel des espaces vectoriels $\varepsilon_1$ et $\varepsilon_2$ et on le note
 	$$ \varepsilon = \varepsilon_1 \otimes \varepsilon_2$$
 \end{definition}
 
 On peut noter les vecteurs $G(\ket{u},\ket{v})$ $\ket{u}\otimes\ket{v}$ ou $\ket{u}\ket{v}$ ou $\ket{u,v}$
+
+Il faut avoir conscience qu'on joue dans des espaces vectoriels différents.
+\subsection{Bilinéarité}
+Par construction, on a $(\ket{u},\ket{v}) \rightarrow \ket{u}\otimes\ket{v}$ qui vérifie la bilinéarité.
+
+$$ \ket{u} \otimes \left[\lambda\ket{v_1} + \mu\ket{v_2}\right] = \lambda\left(\ket{u}\otimes\ket{v_1}\right) + \mu\left(\ket{u}\otimes\ket{v_2}\right) $$
+
+
+$$ \left[\lambda\ket{u_1} + \mu\ket{u_2}\right] \otimes \ket{v}  = \lambda\left(\ket{u_1}\otimes\ket{v}\right) + \mu\left(\ket{u_2}\otimes\ket{v}\right) $$
+
+\section{Produit tensoriel de 3 espaces vectoriels}
+
+On généralise, cela peut se faire pour d'autres nombres que 3.
+
+Soient $\varepsilon_1$,$\varepsilon_2$,$\varepsilon_3$, espaces vectoriels de dimensions $N_1$ $N_2$ $N_3$
+
+\begin{thm}
+	Il existe toujours un espace vectoriel $\varepsilon$ et 1 application trilinéaire $G: \varepsilon_1 \times \varepsilon_2 \times \varepsilon_3 \rightarrow \varepsilon$ tels que, pour toute application trilinéaire $S: \varepsilon_1 \times \varepsilon_2 \times\varepsilon_3\rightarrow \varepsilon_S$, il existe une application linéaire $\tilde{S} : \varepsilon \rightarrow \varepsilon_S$ telle que 
+	$$ S(\ket{u},\ket{v},\ket{w})  = \tilde{S}G(\ket{u},\ket{v},\ket{w}), \forall \ket{u} \in \varepsilon_1,\ket{v} \in \varepsilon_2,\ket{w} \in \varepsilon_3$$
+\end{thm}
+
+\begin{thm}
+	L'espace vectoriel $\varepsilon$ est unique à un isomorphisme près, de même que l'application G. Cet espace est de dim $N_1 \cdot N_2\cdot N_3$ et $ \{ G(\ket{u_i},\ket{v_j},\ket{w_k}) \} $ est une base de $ \varepsilon $
+\end{thm}
+
+\begin{definition}
+	L'espace $\varepsilon$ est appelé espace produit tensoriel des espaces vectoriels $\varepsilon_1$, $\varepsilon_2$ et $\varepsilon_3$ et on le note
+	$$ \varepsilon = \varepsilon_1 \otimes \varepsilon_2 \otimes \varepsilon_3 $$
+\end{definition}
+
+\section{Produit tensoriel de 2 espaces d'Hilbert}
+
+Soient $\varepsilon_1$ et $\varepsilon_1$, deux espaces d'Hilbert de dimension $N_1$ et $N_2$.
+
+On peut définir le produit scalaire suivant\footnote{A vérifier par soi-même que c'est bien correct, et que c'est un produit scalaire} dans l'espace $\varepsilon$ 
+\begin{thm}
+	L'application
+	$$ \langle G \left(\ket{u},\ket{v}\right)|  G \left(\ket{u'},\ket{v'}\right) \rangle_\epsilon = \braket{u|u'}_{\varepsilon_1} \cdot \braket{v|v'}_{\varepsilon_2}$$
+	définit un produit scalaire du $\varepsilon$ et confère à cet espace, avec la norme et la métrique associée, la structure d'un espace d'Hilbert.
+\end{thm}
+
+\begin{definition}
+	L'espace $\varepsilon$ est appelé espace produit tensoriel des espaces d'Hilbert $\varepsilon_1$ et $\varepsilon_2$ et on le note
+	$$ \varepsilon = \varepsilon_1 \otimes \varepsilon_2$$
+\end{definition}
+
+\subsection{Exemples d'espaces d'Hilbert produits tensoriels}
+
+$$ \mathbb{R}^{n. m} = \mathbb{R}^n \otimes \mathbb{R}^m $$
+$$ \mathbb{C}^{n. m} = \mathbb{C}^n \otimes \mathbb{C}^m $$
+$$ L^{(2)}( \mathbb{R}^{n+m}) = L^{(2)}( \mathbb{R}^{n}) \otimes L^{(2)}( \mathbb{R}^{m})$$
+
+On peut calculer le produit scalaire pour chacun des espaces proposés.
+
+\section{Vecteur produit tensoriel}
+\begin{itemize}
+	\item Tout vecteur $\ket{u}\otimes\ket{v}$ est appelé vecteur produit tensoriel
+	\item Tout vecteur produit tensoriel peut se décomposer sur une base de $\varepsilon$ : \\
+	Si $ \{\ket{u_i} \}$ base de $\varepsilon_1$ et $ \{\ket{v_j} \}$ base de $\varepsilon_2$ 
+	$$ \ket{u} \otimes\ket{v} = \left( \sum_i a_i \ket{u_i}\right) \otimes \left( \sum_j b_j \ket{v_j}\right) = \sum_{i,j} a_ib_j\ket{u_i}\otimes\ket{v_j}
+	\footnote{
+		$\ket{\psi_1} \otimes \ket{\psi_1} = \sum_i a_i \ket{u_i}\otimes\sum_j b_j \ket{v_j} = \sum_i a_i \left( \ket{u_i}\otimes\sum_j b_j \ket{v_j} \right) = \sum_i a_i \sum_j b_j \ket{u_i}\otimes\ket{v_j} = \sum_{i,j} a_ib_j\ket{u_i}\otimes\ket{v_j}$
+	}
+	$$
+	\item Tout vecteur de $\varepsilon$ n’est pas nécessairement un vecteur produit tensoriel :
+	l’expression la plus générale d’un ket $\ket{\psi} \in \varepsilon$ est donnée par
+	$$
+	 \ket{\psi} = \sum_{i,j} c_{i,j}\ket{u_i}\otimes\ket{v_j} \neq \ket{\psi_1} \otimes \ket{\psi_2} \footnote{
+	 	Soit $\ket{\psi}$ quelconque $\in \varepsilon$. On peut le décomposer dans la base de $\varepsilon$ $\left\lbrace \ket{u_i}\otimes\ket{v_j} \forall i,j \right\rbrace $. $\ket{\psi} = \sum_{i,j} c_{i,j} \ket{u_i}\otimes\ket{v_j}$
+	 	
+	 	La question est de savoir s'il existe $N_1$ coefficients $a_i$ et $N_2$ coefficients $b_j$ tels que $\forall i,j$ on a $c_{i,j} = a_ib_j$ .
+	 	\begin{itemize}
+	 	\item 	Si oui, alors, on pourra écrire  $\ket{\psi} = \sum_{i,j} c_{i,j} \ket{u_i}\otimes\ket{v_j} = \sum_{i,j} a_i b_j \ket{u_i}\otimes\ket{v_j} = \sum_{i} a_i  \ket{u_i} \otimes \sum_j b_j\ket{v_j}$. Et donc $\ket{\psi}$ appartient à l'ensemble des états séparés.
+	 	\item Si non, cela veut dire que $\ket{\psi}$ n'appartient pas à l'ensemble des états séparés. On peut montrer facilement que possible. En effet, il est rarement possible de trouver $N_1$ et $N_2$ nombres $a_i$ et $b_j$ tels que $N_1N_2$ nombres $c_{i,j}$ peuvent s'écrire $c_{i,j} = a_i b_j$. On a $N_1N_2$ équations à $N_1 + N_2$ inconnues, cela semble complexe à résoudre.
+	 	\end{itemize}
+ 	}
+	$$  
+	
+	L'espace produit tensoriel contient des vecteurs produits tensoriel des vecteurs des espaces $\varepsilon_1$ $\varepsilon_2$ mais il contient aussi d'autres vecteurs qui ne sont pas résultats de produits tensoriel. 
+	
+	En mécanique quantique, les premiers sont appelés états séparés, les seconds états intriqués.
+\end{itemize}
+
+
+\section{Le prolongement des opérateurs}
+
+Soient $\hat{A}$ et $\hat{B}$ opérateurs définis respectivement sur les espaces $\varepsilon_1$ et $\varepsilon_2$. On a aussi $\ket{\psi_1}\in\varepsilon_1$ et $\ket{\psi_2}\in\varepsilon_2$
+
+On définit le prolongateur de $\hat{A}$ dans $\varepsilon$, opérateur linéaire de $\varepsilon$ noté $\hat{\tilde{A}}$
+
+$$\hat{\tilde{A}} \left[ \ket{\psi_1} \otimes \ket{\psi_2} \right] = \left[\hat{A}\ket{\psi_1}\right]\otimes\ket{\psi_2}$$
+
+On définit le prolongateur de $\hat{B}$ dans $\varepsilon$, opérateur linéaire de $\varepsilon$ noté $\hat{\tilde{B}}$
+
+$$\hat{\tilde{B}} \left[ \ket{\psi_1} \otimes \ket{\psi_2} \right] = \ket{\psi_1} \otimes \left[\hat{B}\ket{\psi_2}\right]$$
+
+On peut calculer aussi l'action de $\hat{\tilde{A}}$ sur un vecteur $\ket{\psi}$ quelquonque appartenant à $\varepsilon$
+
+On peut ensuite définir le produit tensoriel $\hat{A}\otimes\hat{B}$
+$$ \left[ \hat{A}\otimes\hat{B} \right]\ket{\psi_1}\otimes\ket{\psi_2} = \left[\hat{A}\otimes\ket{\psi_1}\right]\otimes\left[\hat{B}\otimes\ket{\psi_2}\right]$$
+
+Pour simplifier la notation, on peut laisser tomber la tilde, car l'état sur lequel va s'applique l'opérateur nous donne l'information, ce qui lèvera l'ambiguité.
+
+Pour le produit tensoriel $\hat{A}\otimes\hat{B}$, la notation $\hat{A}\hat{B}$ n'est pas ambigue, étant donné que le produit d'opérateurs provenant d'espaces différents n'est pas défini.
+
+\section{Commutateur dans l'espace produit}
+
+Soient $\hat{A}$ et $\hat{B}$ opérateurs prolongés dans $\varepsilon$,
+$$ \left[\hat{A},\hat{B}\right] = 0 $$
+
+TODO:démonstration
+
+On dit que 2 opérateurs originaires d'espaces différents commutent toujours.

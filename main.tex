@@ -1,4 +1,4 @@
-\documentclass[a4paper,12pt]{book}
+\documentclass[a4paper,12pt]{report}
 \usepackage[utf8]{inputenc}
 \usepackage{graphicx}
 \usepackage[french]{babel}
@@ -7,7 +7,11 @@
 \usepackage{amssymb}
 \usepackage{amsthm}
 \usepackage{braket}
+\usepackage[margin=2cm]{geometry}
+\usepackage[hang,flushmargin]{footmisc} 
 
+
+\setlength{\parindent}{0em}
 
 \begin{document}
 \newtheorem*{thm}{Théorème}
@@ -17,14 +21,13 @@
 \title{Cours de quantique II}
 
 
-\frontmatter
+
 \maketitle
 \tableofcontents
 
-\mainmatter
 \include{./TeX_files/chapter01}
+\include{./TeX_files/chapter02}
 
-\backmatter
 % bibliography, glossary and index would go here.
 
 \end{document}
